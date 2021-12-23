@@ -1,0 +1,32 @@
+<form [formGroup]="SpecialisteAddForm" (ngSubmit)="addSpecialiste()">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Nom</label>
+        <input formControlName="nom" type="text" class="form-control"  aria-describedby="emailHelp" placeholder="Entrer le nom">
+        
+      </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Image Lien</label>
+      <input formControlName="image" type="text" class="form-control" id="exampleInputPassword1" placeholder="Donner le lien de votre image ">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Description</label>
+      <input formControlName="description" type="text" class="form-control" id="exampleInputPassword1" placeholder="un petit mot ... ">
+    </div>
+    <button [disabled]="SpecialisteAddForm.invalid" type="submit" class="btn btn-primary">Submit</button>
+    <button (click)="collapse()" style="margin-left: 20px" type="button" class="btn btn-danger">Exit</button>
+    <br>
+  
+    <br>
+    <div class="alert alert-danger" *ngIf="errorMessage" role="alert">
+        L’adresse e-mail  que vous avez saisi existe déja.
+      </div>
+  </form>

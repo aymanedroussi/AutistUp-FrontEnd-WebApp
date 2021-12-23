@@ -1,0 +1,30 @@
+<form [formGroup]="articleAddForm" (ngSubmit)="addArticle()">
+    <div class="form-group">
+
+        <input formControlName="nom"  type="text" class="form-control"  aria-describedby="emailHelp" placeholder="Entrer le Nom de l'article">
+        
+      </div>
+      <div class="form-group">
+     
+        <input formControlName="description"  value=""  type="text" class="form-control"  aria-describedby="emailHelp" placeholder="Entrer la description de l'article">
+        
+      </div>
+    <div class="form-group">
+  
+      <input formControlName="datepublication"  value=""  type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Entrer la date de publication">
+      
+    </div>
+    <div class="form-group">
+ 
+      <input value="" formControlName="auteur" type="text" class="form-control" id="exampleInputPassword1" placeholder="Entrer le Nom de l'article">
+    </div>
+
+    <button [disabled]="articleAddForm.invalid" type="submit" class="btn btn-primary">Submit</button>
+    <button (click)="collapse()" style="margin-left: 20px" type="button" class="btn btn-danger">Exit</button>
+    <br>
+  
+    <br>
+    <div class="alert alert-danger" *ngIf="errorMessage" role="alert">
+        L’adresse e-mail  que vous avez saisi existe déja.
+      </div>
+  </form>

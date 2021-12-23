@@ -1,0 +1,34 @@
+<form [formGroup]="parentAddForm" (ngSubmit)="addParent()">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Nom</label>
+        <input formControlName="nom" type="text" class="form-control"  aria-describedby="emailHelp" placeholder="Entrer le nom">
+        
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Age de l'enfant</label>
+        <input formControlName="age" type="number" class="form-control"  aria-describedby="emailHelp" placeholder="Entrer l'age de votre enfant">
+        
+      </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Votre numéro de télephone</label>
+        <input formControlName="mobile" type="text" class="form-control"  aria-describedby="emailHelp" placeholder="Entrer votre numéro de télephone">
+        
+      </div>
+    <button [disabled]="parentAddForm.invalid" type="submit" class="btn btn-primary">Submit</button>
+    <button (click)="collapse()" style="margin-left: 20px" type="button" class="btn btn-danger">Exit</button>
+    <br>
+  
+    <br>
+    <div class="alert alert-danger" *ngIf="errorMessage" role="alert">
+        L’adresse e-mail  que vous avez saisi existe déja.
+      </div>
+  </form>
